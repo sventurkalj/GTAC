@@ -62,4 +62,4 @@ We do appreciate that the analyses presented here are not exhaustive of what can
 
 ## Contact
 
-[Sven Turkalj](sven.turkalj@rdm.ox.ac.uk)
+[Sven Turkalj](mailto:sven.turkalj@rdm.ox.ac.uk)
