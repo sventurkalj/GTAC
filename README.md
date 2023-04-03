@@ -45,13 +45,13 @@ Of note, this pipeline, originally used for TARGET-seq genotype calling, assumes
 ## Downstream analysis
 
 All downstream analysis was performed in R. We provide seven different sections of code used to assign clonal identities and use them for scATAC-seq analysis
-1)	01_Genotype_calling: used to assign a genotype for each cell at each locus of interest
-2)	02_ADO_estimation_in_cell_lines: this section is used to estimate the rate of allelic drop-out (ADO) in cell lines known to be heterozygous mutant at loci of interest. The code in this section can be used to benchmark ADO rates for a given set of primers.
-3)	03_Genotype_integration: once we have genotypes for each locus of interest, genotype information is merged across cells to assign each cell to a most likely clone and reconstruct clonal hierarchy
-4)	04_Integration_of_genotype_and_scATAC_data: once the ArchR project is generated using the fragment file as input, clone information is added to the project metadata. Standard QC is performed to exclude low-quality cells or cells for which the clone could not be confidently assigned
-5)	05_Dimensionality_reduction_peak_calling_cluster_assignment: this section performs LSI, UMAP visualization, evaluation of gene activities, peak calling on chosen pseudobulk aggregates, TF motif accessibility across populations, and enrichment of marker peaks. This allows to confidently label cell populations in the dataset
-6)	06_Downstream_clone-specific_differential_analysis: most of this section analyses clone-specific chromatin accessibility: differential gene and motif accessibility, clone-specific dynamics of differentiation, variation of genomic elements in specific clones
-7)	07_Projection_of_data_on_healthy_reference: here, all the steps necessary for efficient mapping of data on a healthy reference are described.
+1) **01_Genotype_calling**: used to assign a genotype for each cell at each locus of interest
+2) **02_ADO_estimation_in_cell_lines**: this section is used to estimate the rate of allelic drop-out (ADO) in cell lines known to be heterozygous mutant at loci of interest. The code in this section can be used to benchmark ADO rates for a given set of primers.
+3) **03_Genotype_integration**: once we have genotypes for each locus of interest, genotype information is merged across cells to assign each cell to a most likely clone and reconstruct clonal hierarchy
+4) **04_Integration_of_genotype_and_scATAC_data**: once the ArchR project is generated using the fragment file as input, clone information is added to the project metadata. Standard QC is performed to exclude low-quality cells or cells for which the clone could not be confidently assigned
+5) **05_Dimensionality_reduction_peak_calling_cluster_assignment**: this section performs LSI, UMAP visualization, evaluation of gene activities, peak calling on chosen pseudobulk aggregates, TF motif accessibility across populations, and enrichment of marker peaks. This allows to confidently label cell populations in the dataset
+6) **06_Downstream_clone-specific_differential_analysis**: most of this section analyses clone-specific chromatin accessibility: differential gene and motif accessibility, clone-specific dynamics of differentiation, variation of genomic elements in specific clones
+7) **07_Projection_of_data_on_healthy_reference**: here, all the steps necessary for efficient mapping of data on a healthy reference are described.
 
 
 ## Future developments
