@@ -9,15 +9,15 @@ Several genes mutated across cancers encode epigenetic regulators and transcript
 
 Inspired by single-cell methods linking transcriptional landscapes to clonal identities, like TARGET-seq and Genotyping of Transcriptomes, we developed GTAC, a method linking somatic genotypes to chromatin accessibility profiles of single cells. GTAC is a plate-based approach capturing single cells from primary human samples, which leverages amplification of accessible chromatin fragments to simultaneously capture any genomic locus harbouring a mutation in a subset of cells. This allows for efficient linkage of clonal identity and epigenetic landscape at single-cell resolution.
 While developing GTAC, we optimized an elegant and robust plate-based scATAC-seq approach published previously by Xi Chen and colleagues:
-- [Chen *et al.*, A rapid and robust method for single cell chromatin accessibility profiling (2018)](https://www.nature.com/articles/s41467-018-07771-0)
-- [Xu *et al.*, A plate-based single-cell ATAC-seq workflow for fast and robust profiling of chromatin accessibility (2021)](https://www.nature.com/articles/s41596-021-00583-5)
+- [Chen *et al.*, A rapid and robust method for single cell chromatin accessibility profiling (2018)](https://www.nature.com/articles/s41467-018-07771-0);
+- [Xu *et al.*, A plate-based single-cell ATAC-seq workflow for fast and robust profiling of chromatin accessibility (2021)](https://www.nature.com/articles/s41596-021-00583-5).
 
 Despite the generally lower throughput when compared to droplet-based strategies, GTAC comes with several crucial advantages:
--	High-content scATAC-seq libraries capture a notably higher number of unique nuclear fragments per cell compared to droplet-based strategies, allowing for high-resolution study of accessible chromatin
--	Low allelic drop-out rates for single-cell genotyping across loci allows for high-confidence genotype calling, a key aspect when comparing molecular landscapes of different clones
--	Efficient multiplexed genotyping allows to reconstruct complex clonal hierarchies within cancers, thus being applicable to a vast spectrum of human malignancies
--	Genotyping of genomic loci is independent of chromatin accessibility, allowing for uniform genotyping efficiency across different cell states
--	The computational framework relies on widely used scATAC-seq tools, thus being accessible both to computational experts and to scientists with limited computational experience
+-	High-content scATAC-seq libraries capture a notably higher number of unique nuclear fragments per cell compared to droplet-based strategies, allowing for high-resolution study of accessible chromatin;
+-	Low allelic drop-out rates for single-cell genotyping across loci allows for high-confidence genotype calling, a key aspect when comparing molecular landscapes of different clones;
+-	Efficient multiplexed genotyping allows to reconstruct complex clonal hierarchies within cancers, thus being applicable to a vast spectrum of human malignancies;
+-	Genotyping of genomic loci is independent of chromatin accessibility, allowing for uniform genotyping efficiency across different cell states;
+-	The computational framework relies on widely used scATAC-seq tools, thus being accessible both to computational experts and to scientists with limited computational experience.
 
 
 ## How does GTAC work?
@@ -45,13 +45,14 @@ Of note, this pipeline, originally used for TARGET-seq genotype calling, assumes
 ## Downstream analysis
 
 All downstream analysis was performed in R. We provide seven different sections of code used to assign clonal identities and use them for scATAC-seq analysis
-1) **01_Genotype_calling**: used to assign a genotype for each cell at each locus of interest
-2) **02_ADO_estimation_in_cell_lines**: this section is used to estimate the rate of allelic drop-out (ADO) in cell lines known to be heterozygous mutant at loci of interest. The code in this section can be used to benchmark ADO rates for a given set of primers.
-3) **03_Genotype_integration**: once we have genotypes for each locus of interest, genotype information is merged across cells to assign each cell to a most likely clone and reconstruct clonal hierarchy
-4) **04_Integration_of_genotype_and_scATAC_data**: once the ArchR project is generated using the fragment file as input, clone information is added to the project metadata. Standard QC is performed to exclude low-quality cells or cells for which the clone could not be confidently assigned
-5) **05_Dimensionality_reduction_peak_calling_cluster_assignment**: this section performs LSI, UMAP visualization, evaluation of gene activities, peak calling on chosen pseudobulk aggregates, TF motif accessibility across populations, and enrichment of marker peaks. This allows to confidently label cell populations in the dataset
-6) **06_Downstream_clone-specific_differential_analysis**: most of this section analyses clone-specific chromatin accessibility: differential gene and motif accessibility, clone-specific dynamics of differentiation, variation of genomic elements in specific clones
-7) **07_Projection_of_data_on_healthy_reference**: here, all the steps necessary for efficient mapping of data on a healthy reference are described.
+- **01_Genotype_calling**: used to assign a genotype for each cell at each locus of interest;
+- **02_ADO_estimation_in_cell_lines**: this section is used to estimate the rate of allelic drop-out (ADO) in cell lines known to be heterozygous mutant at loci of interest. The code in this section can be used to benchmark ADO rates for a given set of primers;
+- **03_Genotype_integration**: once we have genotypes for each locus of interest, genotype information is merged across cells to assign each cell to a most likely clone and reconstruct clonal hierarchy;
+- **04_Integration_of_genotype_and_scATAC_data**: once the ArchR project is generated using the fragment file as input, clone information is added to the project metadata. Standard QC is performed to exclude low-quality cells or cells for which the clone could not be confidently assigned;
+- **05_Dimensionality_reduction_peak_calling_cluster_assignment**: this section performs LSI, UMAP visualization, evaluation of gene activities, peak calling on chosen pseudobulk aggregates, TF motif accessibility across populations, and enrichment of marker peaks. This allows to confidently label cell populations in the dataset;
+- **06_Downstream_clone-specific_differential_analysis**: most of this section analyses clone-specific chromatin accessibility: differential gene and motif accessibility, clone-specific dynamics of differentiation, variation of genomic elements in specific clones;
+- **07_Projection_of_data_on_healthy_reference**: here, all the steps necessary for efficient mapping of data on a healthy reference are described;
+- **08_Plotting_projection_on_reference**: this is used to plot the query's features onto the reference UMAP space.
 
 
 ## Future developments
@@ -63,3 +64,4 @@ We do appreciate that the analyses presented here are not exhaustive of what can
 ## Contact
 
 [Sven Turkalj](mailto:sven.turkalj@rdm.ox.ac.uk)
+**
