@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/620937576.svg)](https://zenodo.org/badge/latestdoi/620937576)
+
+
 # GTAC: Genotyping with the Assay for Transposase-Accessible Chromatin
 
 
