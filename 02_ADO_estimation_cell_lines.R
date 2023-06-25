@@ -68,7 +68,7 @@ genotyping_gDNA_filtered %>%
 # Set the VAF threshold for calling a mutant cell based on these values
 
 gDNA_min_VAF <- 0.00299 # This is max+VAF + 2XSD
-gDNA_max_VAF <- 1 - gDNA_min_VAF # 1 - gDNA_min_VAD -> it is the inverse threshold
+gDNA_max_VAF <- 1 - gDNA_min_VAF # 1 - gDNA_min_VAF -> it is the inverse threshold
 gDNA_min_mut_reads <- 9 # Max number of mutant reads in control
 
 # Call genotype
